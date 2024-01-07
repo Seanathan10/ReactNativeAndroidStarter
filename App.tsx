@@ -10,7 +10,6 @@ import {
   useColorScheme,
 } from 'react-native';
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 import { ContentPadding } from './src/ContentPadding';
@@ -20,7 +19,7 @@ const App = () => {
   changeNavigationBarColor('transparent', false); // The second parameter is for light/dark theme.
 
   return (
-    <SafeAreaProvider>
+    <>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor="transparent"
@@ -35,16 +34,14 @@ const App = () => {
             style={{backgroundColor: isDarkMode ? Colors.black : Colors.white}}>
             {Array.from({length: 100}).map((_, index) => (
               <Text style={styles.text} key={index}>
-                This is line {index + 1}
+                This is line #{index + 1} calculated using &#123;index&#40;{index}&#41; + 1&#125;
               </Text>
             ))}
-            
             <ContentPadding amount={ 2 }/>
-
           </View>
         </ScrollView>
       </SafeAreaView>
-    </SafeAreaProvider>
+    </>
   );
 };
 
