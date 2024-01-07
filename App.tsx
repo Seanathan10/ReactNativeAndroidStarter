@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   SafeAreaView,
@@ -12,9 +13,11 @@ import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
+import { ContentPadding } from './src/ContentPadding';
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-  changeNavigationBarColor('transparent', true); // The second parameter is for light/dark theme.
+  changeNavigationBarColor('transparent', false); // The second parameter is for light/dark theme.
 
   return (
     <SafeAreaProvider>
@@ -35,6 +38,9 @@ const App = () => {
                 This is line {index + 1}
               </Text>
             ))}
+            
+            <ContentPadding amount={ 2 }/>
+
           </View>
         </ScrollView>
       </SafeAreaView>
