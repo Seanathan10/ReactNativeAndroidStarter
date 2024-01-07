@@ -1,3 +1,5 @@
+# [DOWNLOAD HERE](https://github.com/Seanathan10/ReactNativeAndroidStarter/releases/download/v0.1/app-release.apk)
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
